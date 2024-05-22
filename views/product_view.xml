@@ -44,5 +44,20 @@
         <!-- Menu item -->
         <menuitem id="menu_bosky_store_root" name="Bosky Store" sequence="10"/>
         <menuitem id="menu_product" name="Products" parent="menu_bosky_store_root" action="action_product" sequence="10"/>
+
+
+         <!-- Module Icon -->
+        <record id="bosky_store_description" model="ir.ui.view">
+            <field name="name">bosky.store.description</field>
+            <field name="model">ir.ui.view</field>
+            <field name="type">qweb</field>
+            <field name="arch" type="xml">
+                <div>
+                    <img src="/bosky_store/static/description/favicon.png" />
+                </div>
+            </field>
+        </record>
+
+        
     </data>
 </odoo>

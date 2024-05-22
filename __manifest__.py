@@ -15,6 +15,12 @@
         'views/report_view.xml',
         'data/data.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'bosky_store/static/description/favicon.png',
+        ],
+    },
+    'images': ['static/description/favicon.png'],
     'license': 'LGPL-3',
     'installable': True,
     'application': True,
