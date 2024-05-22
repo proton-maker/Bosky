@@ -1,5 +1,7 @@
 # Bosky Online Store Module
 
+![Bosky Online Store](https://raw.githubusercontent.com/proton-maker/Bosky/main/gambar/homepage-seo.png)
+
 Halo sobat developer! 🎉
 
 Selamat datang di modul **Bosky Online Store** untuk Odoo. Ini adalah modul keren yang akan mengubah Odoo kamu menjadi toko online yang kekinian dan siap untuk berbisnis. Yuk, kita lihat apa saja yang bisa dilakukan oleh modul ini!
