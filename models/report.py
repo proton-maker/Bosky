@@ -1,7 +1,7 @@
 from odoo import models, fields, api
 
 class SalesReport(models.TransientModel):
-    _name = 'online_store.sales_report'
+    _name = 'bosky_store.sales_report'
     _description = 'Sales Report'
 
     start_date = fields.Date(string='Start Date', required=True)
@@ -12,13 +12,13 @@ class SalesReport(models.TransientModel):
     @api.depends('start_date', 'end_date')
     def _compute_total_sales(self):
         for report in self:
-            orders = self.env['online_store.order'].search([('order_date', '>=', report.start_date), ('order_date', '<=', report.end_date)])
+            orders = self.env['bosky_store.order'].search([('order_date', '>=', report.start_date), ('order_date', '<=', report.end_date)])
             report.total_sales = sum(order.total_amount for order in orders)
 
     @api.depends('start_date', 'end_date')
     def _compute_top_products(self):
         for report in self:
-            orders = self.env['online_store.order'].search([('order_date', '>=', report.start_date), ('order_date', '<=', report.end_date)])
+            orders = self.env['bosky_store.order'].search([('order_date', '>=', report.start_date), ('order_date', '<=', report.end_date)])
             product_sales = {}
             for order in orders:
                 for product in order.product_ids:

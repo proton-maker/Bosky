@@ -2,8 +2,8 @@
     <data>
         <!-- Form view -->
         <record id="view_sales_report_form" model="ir.ui.view">
-            <field name="name">online_store.sales_report.form</field>
-            <field name="model">online_store.sales_report</field>
+            <field name="name">bosky_store.sales_report.form</field>
+            <field name="model">bosky_store.sales_report</field>
             <field name="arch" type="xml">
                 <form string="Sales Report">
                     <sheet>
@@ -21,12 +21,12 @@
         <!-- Action -->
         <record id="action_sales_report" model="ir.actions.act_window">
             <field name="name">Sales Reports</field>
-            <field name="res_model">online_store.sales_report</field>
+            <field name="res_model">bosky_store.sales_report</field>
             <field name="view_mode">form</field>
             <field name="target">new</field>
         </record>
 
         <!-- Menu item -->
-        <menuitem id="menu_sales_report" name="Sales Reports" parent="menu_online_store_root" action="action_sales_report" sequence="40"/>
+        <menuitem id="menu_sales_report" name="Sales Reports" parent="menu_bosky_store_root" action="action_sales_report" sequence="40"/>
     </data>
 </odoo>

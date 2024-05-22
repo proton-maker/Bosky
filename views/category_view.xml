@@ -2,8 +2,8 @@
     <data>
         <!-- Form view -->
         <record id="view_category_form" model="ir.ui.view">
-            <field name="name">online_store.category.form</field>
-            <field name="model">online_store.category</field>
+            <field name="name">bosky_store.category.form</field>
+            <field name="model">bosky_store.category</field>
             <field name="arch" type="xml">
                 <form string="Category">
                     <sheet>
@@ -18,8 +18,8 @@
 
         <!-- Tree view -->
         <record id="view_category_tree" model="ir.ui.view">
-            <field name="name">online_store.category.tree</field>
-            <field name="model">online_store.category</field>
+            <field name="name">bosky_store.category.tree</field>
+            <field name="model">bosky_store.category</field>
             <field name="arch" type="xml">
                 <tree string="Category">
                     <field name="name"/>
@@ -30,11 +30,11 @@
         <!-- Action -->
         <record id="action_category" model="ir.actions.act_window">
             <field name="name">Categories</field>
-            <field name="res_model">online_store.category</field>
+            <field name="res_model">bosky_store.category</field>
             <field name="view_mode">tree,form</field>
         </record>
 
         <!-- Menu item -->
-        <menuitem id="menu_category" name="Categories" parent="menu_online_store_root" action="action_category" sequence="20"/>
+        <menuitem id="menu_category" name="Categories" parent="menu_bosky_store_root" action="action_category" sequence="20"/>
     </data>
 </odoo>

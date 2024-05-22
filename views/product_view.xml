@@ -2,8 +2,8 @@
     <data>
         <!-- Form view -->
         <record id="view_product_form" model="ir.ui.view">
-            <field name="name">online_store.product.form</field>
-            <field name="model">online_store.product</field>
+            <field name="name">bosky_store.product.form</field>
+            <field name="model">bosky_store.product</field>
             <field name="arch" type="xml">
                 <form string="Product">
                     <sheet>
@@ -11,8 +11,8 @@
                             <field name="name"/>
                             <field name="description"/>
                             <field name="price"/>
-                            <field name="discount"/>  <!-- Field diskon -->
-                            <field name="final_price" readonly="1"/>  <!-- Field harga akhir -->
+                            <field name="discount"/>
+                            <field name="final_price" readonly="1"/>
                             <field name="category_id"/>
                         </group>
                     </sheet>
@@ -22,14 +22,14 @@
 
         <!-- Tree view -->
         <record id="view_product_tree" model="ir.ui.view">
-            <field name="name">online_store.product.tree</field>
-            <field name="model">online_store.product</field>
+            <field name="name">bosky_store.product.tree</field>
+            <field name="model">bosky_store.product</field>
             <field name="arch" type="xml">
                 <tree string="Product">
                     <field name="name"/>
                     <field name="price"/>
-                    <field name="discount"/>  <!-- Field diskon -->
-                    <field name="final_price" readonly="1"/>  <!-- Field harga akhir -->
+                    <field name="discount"/>
+                    <field name="final_price" readonly="1"/>
                 </tree>
             </field>
         </record>
@@ -37,12 +37,12 @@
         <!-- Action -->
         <record id="action_product" model="ir.actions.act_window">
             <field name="name">Products</field>
-            <field name="res_model">online_store.product</field>
+            <field name="res_model">bosky_store.product</field>
             <field name="view_mode">tree,form</field>
         </record>
 
         <!-- Menu item -->
-        <menuitem id="menu_online_store_root" name="Online Store" sequence="10"/>
-        <menuitem id="menu_product" name="Products" parent="menu_online_store_root" action="action_product" sequence="10"/>
+        <menuitem id="menu_bosky_store_root" name="Bosky Store" sequence="10"/>
+        <menuitem id="menu_product" name="Products" parent="menu_bosky_store_root" action="action_product" sequence="10"/>
     </data>
 </odoo>

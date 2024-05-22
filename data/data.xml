@@ -3,7 +3,7 @@
         <!-- Email template -->
         <record id="order_email_template" model="mail.template">
             <field name="name">Order Confirmation</field>
-            <field name="model_id" ref="model_online_store_order"/>
+            <field name="model_id" ref="model_bosky_store_order"/>
             <field name="subject">Order Confirmation</field>
             <field name="email_from">${object.company_id.email or ''}</field>
             <field name="email_to">${object.email}</field>
