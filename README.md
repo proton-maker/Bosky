@@ -22,14 +22,14 @@ Selamat datang di modul **Bosky Online Store** untuk Odoo. Ini adalah modul kere
 5. **Notifikasi Email:**
    - Kirim notifikasi email otomatis ke pelanggan setelah pesanan dibuat. Biar pelanggan tetap update dan merasa diperhatikan. 😎
 
-## Cara Install
+## Instalasi
 
 ### Prasyarat
 
 - Odoo 17.0
 - Python 3.8 atau lebih tinggi
 
-### Langkah-Langkah Install
+### Langkah-Langkah Instalasi
 
 1. **Clone repositori ini:**
 
@@ -94,12 +94,16 @@ Setiap kali pesanan dibuat, notifikasi email akan dikirim secara otomatis ke ala
 
 Kami selalu terbuka untuk kontribusi! Fork repositori ini dan buat pull request dengan perubahan yang kamu buat. Pastikan semua tes berjalan lancar sebelum mengirimkan PR kamu. Ayo bareng-bareng bikin modul ini makin keren! 😍
 
+## Status Pengembangan
+
+Modul ini masih dalam tahap pengembangan. Fitur-fitur baru dan peningkatan akan terus ditambahkan. Jadi, tetap pantau terus ya!
+
 ## Lisensi
 
 Modul ini dilisensikan di bawah LGPL-3.0. Lihat file [LICENSE](LICENSE) untuk informasi lebih lanjut.
 
 ## Kontak
 
-Punya pertanyaan atau butuh bantuan? Jangan ragu untuk kontak kami di [email Anda] atau kunjungi [situs web Anda](http://www.yourwebsite.com).
+Punya pertanyaan atau butuh bantuan? Jangan ragu untuk kontak kami di phionix32@protonmail.com atau kunjungi [bosmudasky.com](http://www.bosmudasky.com).
 
 Selamat berkreasi dan selamat berjualan online! 🚀
