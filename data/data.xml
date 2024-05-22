@@ -1,0 +1,26 @@
+<odoo>
+    <data noupdate="1">
+        <!-- Email template -->
+        <record id="order_email_template" model="mail.template">
+            <field name="name">Order Confirmation</field>
+            <field name="model_id" ref="model_online_store_order"/>
+            <field name="subject">Order Confirmation</field>
+            <field name="email_from">${object.company_id.email or ''}</field>
+            <field name="email_to">${object.email}</field>
+            <field name="body_html">
+                <![CDATA[
+                <p>Dear ${object.customer_name},</p>
+                <p>Thank you for your order. Here are the details:</p>
+                <ul>
+                % for product in object.product_ids:
+                    <li>${product.name}: ${product.final_price}</li>
+                % endfor
+                </ul>
+                <p>Total Amount: ${object.total_amount}</p>
+                <p>Best regards,</p>
+                <p>Your Company</p>
+                ]]>
+            </field>
+        </record>
+    </data>
+</odoo>

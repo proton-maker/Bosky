@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+online_store.access_online_store_product,access_online_store_product,model_online_store_product,base.group_user,1,1,1,1
+online_store.access_online_store_category,access_online_store_category,model_online_store_category,base.group_user,1,1,1,1
+online_store.access_online_store_order,access_online_store_order,model_online_store_order,base.group_user,1,1,1,1

@@ -1,0 +1,21 @@
+{
+    'name': 'Online Store',
+    'version': '1.0',
+    'summary': 'A simple online store module for Odoo',
+    'description': 'This module adds basic online store functionalities to Odoo.',
+    'author': 'Your Name',
+    'category': 'Sales',
+    'website': 'http://www.yourwebsite.com',
+    'depends': ['base', 'mail'],  
+    'data': [
+        'security/ir.model.access.csv',
+        'views/product_view.xml',
+        'views/category_view.xml',
+        'views/order_view.xml',
+        'data/data.xml',
+    ],
+    'license': 'LGPL-3',
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+}
