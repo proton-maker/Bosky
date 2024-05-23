@@ -38,24 +38,7 @@ class Order(models.Model):
     def create(self, vals):
         if vals.get('name', 'New') == 'New':
             vals['name'] = self.env['ir.sequence'].next_by_code('bosky_store.order') or 'New'
-        record = super(Order, self).create(vals)
-        template = self.env.ref('bosky_store.order_email_template')
-        self.env['mail.template'].browse(template.id).send_mail(record.id, force_send=True)
-        return record
+        return super(Order, self).create(vals)
 
     def write(self, vals):
-        res = super(Order, self).write(vals)
-        if 'payment_status' in vals and vals['payment_status'] == 'paid':
-            self.send_payment_confirmation_email()
-        return res
-
-    def send_email_notification(self):
-        template_id = self.env.ref('bosky_store.order_email_template').id
-        self.env['mail.template'].browse(template_id).send_mail(self.id, force_send=True)
-
-    def send_payment_confirmation_email(self):
-        template_id = self.env.ref('bosky_store.payment_confirmation_email_template').id
-        self.env['mail.template'].browse(template_id).send_mail(self.id, force_send=True)
-
-    def print_report(self):
-        return self.env.ref('bosky_store.action_report_order').report_action(self)
+        return super(Order, self).write(vals)

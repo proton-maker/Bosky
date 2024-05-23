@@ -8,12 +8,12 @@
                 <form string="Order">
                     <sheet>
                         <group>
-                            <field name="name"/> <!-- Order Reference -->
+                            <field name="name"/>
                             <field name="customer_name"/>
-                            <field name="email"/> <!-- Tambahkan field email di sini -->
+                            <field name="email"/>
                             <field name="partner_id"/>
                             <field name="order_date"/>
-                            <field name="quantity"/> <!-- Tambahkan field quantity di sini -->
+                            <field name="quantity"/>
                         </group>
                         <group string="Products">
                             <field name="product_ids"/>
@@ -23,9 +23,6 @@
                             <field name="payment_status"/>
                         </group>
                     </sheet>
-                    <footer>
-                        <button string="Print Report" type="object" name="print_report" class="btn btn-primary"/>
-                    </footer>
                 </form>
             </field>
         </record>
@@ -36,12 +33,12 @@
             <field name="model">bosky_store.order</field>
             <field name="arch" type="xml">
                 <tree string="Order">
-                    <field name="name"/> <!-- Order Reference -->
+                    <field name="name"/>
                     <field name="customer_name"/>
                     <field name="email"/>
                     <field name="partner_id"/>
                     <field name="order_date"/>
-                    <field name="quantity"/> <!-- Tambahkan field quantity di sini -->
+                    <field name="quantity"/>
                     <field name="total_amount" readonly="1"/>
                     <field name="payment_status"/>
                 </tree>
