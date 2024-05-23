@@ -13,6 +13,7 @@
                             <field name="email"/> <!-- Tambahkan field email di sini -->
                             <field name="partner_id"/>
                             <field name="order_date"/>
+                            <field name="quantity"/> <!-- Tambahkan field quantity di sini -->
                         </group>
                         <group string="Products">
                             <field name="product_ids"/>
@@ -22,6 +23,9 @@
                             <field name="payment_status"/>
                         </group>
                     </sheet>
+                    <footer>
+                        <button string="Print Report" type="object" name="print_report" class="btn btn-primary"/>
+                    </footer>
                 </form>
             </field>
         </record>
@@ -37,6 +41,7 @@
                     <field name="email"/>
                     <field name="partner_id"/>
                     <field name="order_date"/>
+                    <field name="quantity"/> <!-- Tambahkan field quantity di sini -->
                     <field name="total_amount" readonly="1"/>
                     <field name="payment_status"/>
                 </tree>
