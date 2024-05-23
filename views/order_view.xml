@@ -8,9 +8,16 @@
                 <form string="Order">
                     <sheet>
                         <group>
+                            <field name="name"/> <!-- Order Reference -->
                             <field name="customer_name"/>
+                            <field name="email"/> <!-- Tambahkan field email di sini -->
+                            <field name="partner_id"/>
                             <field name="order_date"/>
+                        </group>
+                        <group string="Products">
                             <field name="product_ids"/>
+                        </group>
+                        <group>
                             <field name="total_amount" readonly="1"/>
                             <field name="payment_status"/>
                         </group>
@@ -25,7 +32,10 @@
             <field name="model">bosky_store.order</field>
             <field name="arch" type="xml">
                 <tree string="Order">
+                    <field name="name"/> <!-- Order Reference -->
                     <field name="customer_name"/>
+                    <field name="email"/>
+                    <field name="partner_id"/>
                     <field name="order_date"/>
                     <field name="total_amount" readonly="1"/>
                     <field name="payment_status"/>
