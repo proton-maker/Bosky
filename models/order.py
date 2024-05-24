@@ -42,3 +42,6 @@ class Order(models.Model):
 
     def write(self, vals):
         return super(Order, self).write(vals)
+
+    def print_report(self):
+        return self.env.ref('bosky_store.action_report_order').report_action(self)

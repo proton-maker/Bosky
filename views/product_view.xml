@@ -14,6 +14,9 @@
                             <field name="discount"/>
                             <field name="final_price" readonly="1"/>
                             <field name="category_id"/>
+                            <field name="stock"/>
+                            <field name="sku"/>
+                            <field name="image" widget="image"/>
                         </group>
                     </sheet>
                 </form>
@@ -30,6 +33,8 @@
                     <field name="price"/>
                     <field name="discount"/>
                     <field name="final_price" readonly="1"/>
+                    <field name="stock"/>
+                    <field name="sku"/>
                 </tree>
             </field>
         </record>
@@ -45,8 +50,7 @@
         <menuitem id="menu_bosky_store_root" name="Bosky Store" sequence="10"/>
         <menuitem id="menu_product" name="Products" parent="menu_bosky_store_root" action="action_product" sequence="10"/>
 
-
-         <!-- Module Icon -->
+        <!-- Module Icon -->
         <record id="bosky_store_description" model="ir.ui.view">
             <field name="name">bosky.store.description</field>
             <field name="model">ir.ui.view</field>
@@ -57,7 +61,5 @@
                 </div>
             </field>
         </record>
-
-        
     </data>
 </odoo>

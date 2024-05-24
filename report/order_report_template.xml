@@ -1,22 +1,16 @@
 <odoo>
-    <template id="report_order_document">
-        <t t-call="web.html_container">
-            <t t-foreach="docs" t-as="o">
+    <data>
+        <template id="report_order_document">
+            <t t-call="web.basic_layout">
                 <div class="page">
                     <h2>Order Report</h2>
-                    <p>Order Reference: <t t-esc="o.name"/></p>
-                    <p>Customer Name: <t t-esc="o.customer_name"/></p>
-                    <p>Order Date: <t t-esc="o.order_date"/></p>
-                    <p>Total Amount: <t t-esc="o.total_amount"/></p>
-                    <p>Payment Status: <t t-esc="o.payment_status"/></p>
-                    <p>Products:</p>
-                    <ul>
-                        <t t-foreach="o.product_ids" t-as="product">
-                            <li><t t-esc="product.name"/></li>
-                        </t>
-                    </ul>
+                    <p>Order Reference: <span t-field="doc.name"/></p>
+                    <p>Customer Name: <span t-field="doc.customer_name"/></p>
+                    <p>Order Date: <span t-field="doc.order_date"/></p>
+                    <p>Total Amount: <span t-field="doc.total_amount"/></p>
+                    <p>Payment Status: <span t-field="doc.payment_status"/></p>
                 </div>
             </t>
-        </t>
-    </template>
+        </template>
+    </data>
 </odoo>

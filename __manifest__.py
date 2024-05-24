@@ -15,6 +15,8 @@
         'views/report_view.xml',
         'data/data.xml',
         'data/order_sequence.xml',
+        'report/report.xml',
+        'report/order_report_template.xml',
     ],
     'assets': {
         'web.assets_backend': [

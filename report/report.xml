@@ -1,11 +1,13 @@
 <odoo>
-    <report
-        id="action_report_order"
-        string="Order Report"
-        model="bosky_store.order"
-        report_type="qweb-pdf"
-        name="bosky_store.report_order_document"
-        file="bosky_store.report_order_document"
-        print_report_name="'Order Report - %s' % (object.name)"
-    />
+    <data>
+        <report 
+            id="action_report_order"
+            model="bosky_store.order"
+            string="Order Report"
+            report_type="qweb-pdf"
+            name="bosky_store.report_order_document"
+            file="bosky_store.report_order_document"
+            print_report_name="'Order - %s' % (object.name)"
+        />
+    </data>
 </odoo>
