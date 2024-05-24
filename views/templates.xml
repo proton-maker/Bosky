@@ -1,0 +1,76 @@
+<odoo>
+    <template id="layout" inherit_id="website.layout">
+        <xpath expr="//header" position="inside">
+            <nav>
+                <a href="/shop">Shop</a>
+                <a href="/shop/cart">Cart</a>
+            </nav>
+        </xpath>
+    </template>
+
+    <template id="shop_page" name="Shop Page">
+        <t t-call="website.layout">
+            <div class="container">
+                <h1>Shop</h1>
+                <div class="row">
+                    <t t-foreach="products" t-as="product">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img t-att-src="'/web/image/bosky_store.product/%d/image' % product.id" class="card-img-top" alt="Product Image"/>
+                                <div class="card-body">
+                                    <h5 class="card-title"><t t-esc="product.name"/></h5>
+                                    <p class="card-text"><t t-esc="product.description"/></p>
+                                    <p class="card-text">Price: <t t-esc="product.final_price"/></p>
+                                    <a t-att-href="'/shop/product/%d' % product.id" class="btn btn-primary">View</a>
+                                    <a t-att-href="'/shop/cart/add/%d' % product.id" class="btn btn-success">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="product_page" name="Product Page">
+        <t t-call="website.layout">
+            <div class="container">
+                <h1><t t-esc="product.name"/></h1>
+                <img t-att-src="'/web/image/bosky_store.product/%d/image' % product.id" class="img-fluid" alt="Product Image"/>
+                <p><t t-esc="product.description"/></p>
+                <p>Price: <t t-esc="product.final_price"/></p>
+                <a t-att-href="'/shop/cart/add/%d' % product.id" class="btn btn-success">Add to Cart</a>
+            </div>
+        </t>
+    </template>
+
+    <template id="cart_page" name="Cart Page">
+        <t t-call="website.layout">
+            <div class="container">
+                <h1>Shopping Cart</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="cart.cart_line_ids" t-as="line">
+                            <tr>
+                                <td><t t-esc="line.product_id.name"/></td>
+                                <td><t t-esc="line.quantity"/></td>
+                                <td><t t-esc="line.price"/></td>
+                                <td><t t-esc="line.subtotal"/></td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+                <p>Total Amount: <t t-esc="cart.total_amount"/></p>
+                <a href="/shop/checkout" class="btn btn-primary">Checkout</a>
+            </div>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,58 @@
+<odoo>
+    <data>
+        <!-- Cart Form View -->
+        <record id="view_cart_form" model="ir.ui.view">
+            <field name="name">bosky_store.cart.form</field>
+            <field name="model">bosky_store.cart</field>
+            <field name="arch" type="xml">
+                <form string="Shopping Cart">
+                    <header>
+                        <button string="Pay Now" type="object" name="action_pay" class="btn btn-primary" attrs="{'invisible': [('payment_status', '=', 'paid')]}"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="customer_id"/>
+                            <field name="total_amount" readonly="1"/>
+                            <field name="payment_status" readonly="1"/>
+                        </group>
+                        <notebook>
+                            <page string="Cart Lines">
+                                <field name="cart_line_ids">
+                                    <tree string="Cart Lines" editable="bottom">
+                                        <field name="product_id"/>
+                                        <field name="quantity"/>
+                                        <field name="price" readonly="1"/>
+                                        <field name="subtotal" readonly="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Cart Tree View -->
+        <record id="view_cart_tree" model="ir.ui.view">
+            <field name="name">bosky_store.cart.tree</field>
+            <field name="model">bosky_store.cart</field>
+            <field name="arch" type="xml">
+                <tree string="Shopping Cart">
+                    <field name="customer_id"/>
+                    <field name="total_amount"/>
+                    <field name="payment_status"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_cart" model="ir.actions.act_window">
+            <field name="name">Carts</field>
+            <field name="res_model">bosky_store.cart</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menu Item -->
+        <menuitem id="menu_cart" name="Carts" parent="menu_bosky_store_root" action="action_cart" sequence="20"/>
+    </data>
+</odoo>

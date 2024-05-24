@@ -2,3 +2,5 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 bosky_store.access_bosky_store_product,access_bosky_store_product,model_bosky_store_product,base.group_user,1,1,1,1
 bosky_store.access_bosky_store_category,access_bosky_store_category,model_bosky_store_category,base.group_user,1,1,1,1
 bosky_store.access_bosky_store_order,access_bosky_store_order,model_bosky_store_order,base.group_user,1,1,1,1
+bosky_store.access_bosky_store_cart,access_bosky_store_cart,model_bosky_store_cart,base.group_user,1,1,1,1
+bosky_store.access_bosky_store_cart_line,access_bosky_store_cart_line,model_bosky_store_cart_line,base.group_user,1,1,1,1

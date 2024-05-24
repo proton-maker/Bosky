@@ -14,9 +14,6 @@
                             <field name="discount"/>
                             <field name="final_price" readonly="1"/>
                             <field name="category_id"/>
-                            <field name="stock"/>
-                            <field name="sku"/>
-                            <field name="image" widget="image"/>
                         </group>
                     </sheet>
                 </form>
@@ -33,9 +30,30 @@
                     <field name="price"/>
                     <field name="discount"/>
                     <field name="final_price" readonly="1"/>
-                    <field name="stock"/>
-                    <field name="sku"/>
                 </tree>
+            </field>
+        </record>
+
+        <!-- Kanban view for Products -->
+        <record id="view_product_kanban" model="ir.ui.view">
+            <field name="name">bosky_store.product.kanban</field>
+            <field name="model">bosky_store.product</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div class="o_kanban_image">
+                                    <img t-att-src="'/web/image/bosky_store.product/' + kanban_image"/>
+                                </div>
+                                <strong><field name="name"/></strong>
+                                <div><field name="price"/></div>
+                                <div><field name="discount"/></div>
+                                <div><field name="final_price"/></div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
             </field>
         </record>
 
@@ -43,23 +61,11 @@
         <record id="action_product" model="ir.actions.act_window">
             <field name="name">Products</field>
             <field name="res_model">bosky_store.product</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">kanban,tree,form</field>
         </record>
 
         <!-- Menu item -->
         <menuitem id="menu_bosky_store_root" name="Bosky Store" sequence="10"/>
         <menuitem id="menu_product" name="Products" parent="menu_bosky_store_root" action="action_product" sequence="10"/>
-
-        <!-- Module Icon -->
-        <record id="bosky_store_description" model="ir.ui.view">
-            <field name="name">bosky.store.description</field>
-            <field name="model">ir.ui.view</field>
-            <field name="type">qweb</field>
-            <field name="arch" type="xml">
-                <div>
-                    <img src="/bosky_store/static/description/favicon.png" />
-                </div>
-            </field>
-        </record>
     </data>
 </odoo>
